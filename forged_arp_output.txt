@@ -1,0 +1,14 @@
+root@inside-host:~# arp -n
+Address                  HWtype  HWaddress           Flags Mask            Iface
+10.0.20.1                ether   00:16:3e:ea:12:fc   C                     eth0
+root@inside-host:~# ping 10.0.20.1
+PING 10.0.20.1 (10.0.20.1) 56(84) bytes of data.
+64 bytes from 10.0.20.1: icmp_seq=9 ttl=64 time=0.159 ms
+^C
+--- 10.0.20.1 ping statistics ---
+9 packets transmitted, 1 received, 88% packet loss, time 8180ms
+rtt min/avg/max/mdev = 0.159/0.159/0.159/0.000 ms
+root@inside-host:~# arp -n
+Address                  HWtype  HWaddress           Flags Mask            Iface
+10.0.20.1                ether   00:16:3e:d7:0f:f5   C                     eth0
+
