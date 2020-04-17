@@ -1,6 +1,5 @@
 # TCP/IP Attacks
-_Linus Bein Fahlander_\
-_linusfa@kth.se_
+_Linus Bein Fahlander_ (_linusfa@kth.se_)
 
 A public repository containing the files generated and used in this lab can be found on [GitHub](https://github.com/LinusBF/iv1013-tcp-ip-attack).
 ## Task 1 - ARP cache poisoning
@@ -14,17 +13,7 @@ Address                  HWtype  HWaddress           Flags Mask            Iface
 root@inside-host:~# ping 10.0.20.1
 PING 10.0.20.1 (10.0.20.1) 56(84) bytes of data.
 64 bytes from 10.0.20.1: icmp_seq=1 ttl=64 time=0.042 ms
-64 bytes from 10.0.20.1: icmp_seq=2 ttl=64 time=0.055 ms
-64 bytes from 10.0.20.1: icmp_seq=3 ttl=64 time=0.097 ms
-64 bytes from 10.0.20.1: icmp_seq=4 ttl=64 time=0.104 ms
-64 bytes from 10.0.20.1: icmp_seq=6 ttl=64 time=0.289 ms
-64 bytes from 10.0.20.1: icmp_seq=7 ttl=64 time=0.076 ms
-64 bytes from 10.0.20.1: icmp_seq=8 ttl=64 time=0.112 ms
-64 bytes from 10.0.20.1: icmp_seq=9 ttl=64 time=0.047 ms
-64 bytes from 10.0.20.1: icmp_seq=10 ttl=64 time=0.043 ms
-64 bytes from 10.0.20.1: icmp_seq=11 ttl=64 time=0.108 ms
-64 bytes from 10.0.20.1: icmp_seq=12 ttl=64 time=0.061 ms
-64 bytes from 10.0.20.1: icmp_seq=13 ttl=64 time=0.041 ms
+...
 64 bytes from 10.0.20.1: icmp_seq=14 ttl=64 time=0.094 ms
 ^C
 --- 10.0.20.1 ping statistics ---
