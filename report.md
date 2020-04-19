@@ -48,7 +48,10 @@ Related PCAP file is `task2_ICMP_redirect.pcap`
   These redirect messages tells the `inside-host` that it should route traffic to `outside-host` via a gateway, which is the `attacker`'s IP.
 * The ARP poisoning attack from Task 1 was then run again to cause `inside-host` to start sending the pings to the `attacker`
 * As can be seen in the PCAP file, this redirect is performed for 9 more pings from `inside-host` all of which reach the `attacker`
-* An interesting thing from the victim's side is that the pings return as normal although they can se a redirect message in the terminal output. But there is no packet loss.
+* An interesting thing from the victim's side, is that the pings return as normal ,although they can see a redirect message in the terminal output.
+But there is no packet loss. This could make it a bit harder for the client to determine that something is wrong.
+
+In general, consumer OS software comes with IP redirecting turned off by default to combat this.
 
 ## Task 3 - TCP session hijacking
 Related PCAP file is `task3_tcp_hijack.pcap`
@@ -75,3 +78,7 @@ Related PCAP file is `task3_tcp_hijack.pcap`
 * This resulted in the following command being executed in the `attacker` terminal: `netwox 40 -l 10.0.20.2 -m 10.0.10.2 -j 40 -o 55020 -p 1024 -q 2145573434 -r 1329686055 -E 502 -H 746573740a -G 0101080ade0bf16f0417f6bc -A -z`
 * Sending this message caused the message `test` to appear on the server and in Wireshark I could see a valid ACK response.
 * As can be seen in the PCAP file, any following messages sent from the actual client were not acknowledged due to them now being out of sequence.
+
+If an attacker would want to use this to hijack a session, one relevant thing to do is to make sure that the attacking machine starts sending acknowledgements back to the client to keep them from noticing that the session was hijacked.
+
+Also for this to be a useful attack a program would have to be written to set all the TCP/IP settings dynamically and facilitate the responses sent to the client.
